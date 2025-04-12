@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-loadbalancer
+spec:
+  type: LoadBalancer
+  selector:
+    my_pod: my_jenkins
+  ports:
+    - protocol: TCP
+      port: 8083
+      targetPort: 8080
+
